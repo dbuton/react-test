@@ -31,6 +31,7 @@ export default class GamePage extends React.Component {
         this.toPayCard = this.toPayCard.bind(this);
         this.toBuyCard = this.toBuyCard.bind(this);
         this.makeAction = this.makeAction.bind(this);
+        this.diceLaunched = this.diceLaunched.bind(this);
 
 /*
         this.state = {
@@ -47,7 +48,8 @@ export default class GamePage extends React.Component {
             gameName: 'Partie TEST',
             isGameInitialized: true,
             activePlayerIndex: 1,
-            diceValue: null
+            diceValue: null,
+            isDiceLaunched: false
         }
     }
 
@@ -67,11 +69,13 @@ export default class GamePage extends React.Component {
                         activePlayerIndex={this.state.activePlayerIndex}
                         boardGameCards={this.state.boardGameCards}
                         diceValue={this.state.diceValue}
+                        isDiceLaunched={this.state.isDiceLaunched}
                         launchDice={this.launchDice}
                         finishTurn={this.finishTurn}
                         toBuyCard={this.toBuyCard}
                         toPayCard={this.toPayCard}
                         makeAction={this.makeAction}
+                        diceLaunched={this.diceLaunched}
                     />
                     : <InitGame
                         validatePlayers={this.gameIsInitialized}
@@ -133,6 +137,7 @@ export default class GamePage extends React.Component {
 
         this.setState({
             activePlayerIndex : (activePlayerIndex + 1) % players.length,
+            isDiceLaunched: false
         })
     }
 
@@ -182,5 +187,9 @@ export default class GamePage extends React.Component {
         this.setState({
             players : players
         })
+    }
+
+    diceLaunched() {
+        this.setState({isDiceLaunched: true});
     }
 }

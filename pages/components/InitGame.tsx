@@ -71,8 +71,6 @@ export default class InitGame extends React.Component {
                     {items}
                     <Button type="submit" variant="danger">VALIDER</Button>
                 </form>
-
-
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, ListGroup} from "react-bootstrap";
+import {Card, ListGroup} from "react-bootstrap";
 
 
 export default class Player extends React.Component {
@@ -21,7 +21,6 @@ export default class Player extends React.Component {
     }
 
     render() {
-        const isActive = this.props.isActive
         return (
             <Card style={{ width: '18rem' }}>
                 <Card.Header>Player {this.props.id + 1} : {this.props.name}</Card.Header>

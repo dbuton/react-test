@@ -1,7 +1,7 @@
 import React from "react";
 import LandCardGame from "./LandCardGame";
 import BonusCardGame from "./BonusCardGame";
-import Game from "./Game";
+import {Alert} from "react-bootstrap";
 
 export default class BoardGame extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class BoardGame extends React.Component {
     render() {
         return (
             <div>
-                PLATEAU
+                <Alert variant='warning'>Plateau</Alert>
                 {this.props.boardGameCards.map((card) =>
                     card.type === 'land' ?
                         <LandCardGame
